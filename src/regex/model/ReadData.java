@@ -18,12 +18,6 @@ public class ReadData {
     
     public ReadData() {
         storage = new ArrayList<String>();
-        try {
-            fr = new FileReader("Entries.txt");
-            bf = new BufferedReader(fr);
-        } catch (FileNotFoundException fnfe) {
-            JOptionPane.showMessageDialog(null, "El Archivo no se encontro","REGEX",JOptionPane.ERROR_MESSAGE);
-        }
     }
 
     public void setStorage(ArrayList<String> storage) {
@@ -35,15 +29,41 @@ public class ReadData {
     }
     
     public void readFile() {
-        String input = null;
+        String temp = null;
         storage.clear();
+        prepareReading("entries");
         
         try {
-            while ((input = bf.readLine()) != null) {            
-                storage.add(input);
+            while ((temp = bf.readLine()) != null) {            
+                storage.add(temp);
             }
         } catch (IOException io) {
             JOptionPane.showMessageDialog(null, "No se pudo leer el archivo","REGEX",JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public String readReport(String reportName) {
+        String temp = null;
+        String result = "";
+        prepareReading(reportName);
+        
+        try {
+            while ((temp = bf.readLine()) != null) {            
+                result = result + temp + "\n";
+            }
+        } catch (IOException io) {
+            JOptionPane.showMessageDialog(null, "No se pudo leer el archivo","REGEX",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        return result;
+    }
+    
+    private void prepareReading(String fileName) {
+        try {
+            fr = new FileReader(fileName + ".txt");
+            bf = new BufferedReader(fr);
+        } catch (FileNotFoundException fnfe) {
+            JOptionPane.showMessageDialog(null, "El Archivo no se encontro","REGEX",JOptionPane.ERROR_MESSAGE);
         }
     }
 }
