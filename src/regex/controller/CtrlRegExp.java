@@ -25,7 +25,7 @@ public class CtrlRegExp implements ActionListener{
         this.generateReport = new GenerateReports();
         this.jfPrincipal = jfPrincipal;
         
-        this.jfPrincipal.btnReadInputs.addActionListener(this);
+        this.jfPrincipal.jbnReadInputs.addActionListener(this);
         this.jfPrincipal.jbnAnalizeInputs.addActionListener(this);
         this.jfPrincipal.jbnShowReport.addActionListener(this);
         this.jfPrincipal.jtbData.addMouseListener(new MouseAdapter() {
@@ -39,7 +39,7 @@ public class CtrlRegExp implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getSource() == jfPrincipal.btnReadInputs) {
+        if (ae.getSource() == jfPrincipal.jbnReadInputs) {
             readData.readFile();
             tableContent = new String[readData.getStorage().size()][2];
             showEntries();

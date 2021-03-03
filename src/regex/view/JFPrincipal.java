@@ -7,7 +7,7 @@ package regex.view;
 
 /**
  *
- * @author MarkMVCX
+ * @author MarkZamudio
  */
 public class JFPrincipal extends javax.swing.JFrame {
 
@@ -16,6 +16,9 @@ public class JFPrincipal extends javax.swing.JFrame {
      */
     public JFPrincipal() {
         initComponents();
+        jbnAnalizeInputs.setOpaque(false);
+        jbnShowReport.setOpaque(false);
+        jbnReadInputs.setOpaque(false);
     }
 
     /**
@@ -30,7 +33,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         jpnFill = new javax.swing.JPanel();
         jlbTitle = new javax.swing.JLabel();
         jlbRegExp = new javax.swing.JLabel();
-        btnReadInputs = new javax.swing.JButton();
+        jbnReadInputs = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbData = new javax.swing.JTable();
         jbnAnalizeInputs = new javax.swing.JButton();
@@ -38,25 +41,44 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jpnFill.setBackground(new java.awt.Color(255, 255, 255));
+        jpnFill.setForeground(new java.awt.Color(255, 255, 255));
+
+        jlbTitle.setFont(new java.awt.Font("Times New Roman", 1, 32)); // NOI18N
         jlbTitle.setText("REGEX");
 
-        jlbRegExp.setText("jLabel2");
+        jlbRegExp.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jlbRegExp.setForeground(new java.awt.Color(102, 102, 102));
+        jlbRegExp.setText("ER = (@@)|(@@@@)[aeiouAEIOU]{2}[#&]{2}[0-9]$");
 
-        btnReadInputs.setText("IN");
+        jbnReadInputs.setBackground(new java.awt.Color(255, 255, 255));
+        jbnReadInputs.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jbnReadInputs.setForeground(new java.awt.Color(68, 68, 68));
+        jbnReadInputs.setText("IN");
 
+        jtbData.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jtbData.setForeground(new java.awt.Color(68, 68, 68));
         jtbData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Cadena", "Resultado"
+                "Cadenas", "Resultado"
             }
         ));
         jScrollPane1.setViewportView(jtbData);
 
+        jbnAnalizeInputs.setBackground(new java.awt.Color(255, 255, 255));
+        jbnAnalizeInputs.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jbnAnalizeInputs.setForeground(new java.awt.Color(68, 68, 68));
         jbnAnalizeInputs.setText("Analizar");
+        jbnAnalizeInputs.setEnabled(false);
 
+        jbnShowReport.setBackground(new java.awt.Color(255, 255, 255));
+        jbnShowReport.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jbnShowReport.setForeground(new java.awt.Color(68, 68, 68));
         jbnShowReport.setText("Reporte");
+        jbnShowReport.setEnabled(false);
 
         javax.swing.GroupLayout jpnFillLayout = new javax.swing.GroupLayout(jpnFill);
         jpnFill.setLayout(jpnFillLayout);
@@ -65,41 +87,38 @@ public class JFPrincipal extends javax.swing.JFrame {
             .addGroup(jpnFillLayout.createSequentialGroup()
                 .addGroup(jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnFillLayout.createSequentialGroup()
-                        .addGap(298, 298, 298)
-                        .addGroup(jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlbRegExp)
-                            .addComponent(jlbTitle)))
+                        .addGap(287, 287, 287)
+                        .addComponent(jlbTitle))
                     .addGroup(jpnFillLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(btnReadInputs)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpnFillLayout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(jbnAnalizeInputs)
-                        .addGap(129, 129, 129)
-                        .addComponent(jbnShowReport)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                        .addGap(72, 72, 72)
+                        .addGroup(jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jpnFillLayout.createSequentialGroup()
+                                .addComponent(jbnAnalizeInputs, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jbnShowReport, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpnFillLayout.createSequentialGroup()
+                                .addComponent(jlbRegExp)
+                                .addGap(143, 143, 143)
+                                .addComponent(jbnReadInputs, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         jpnFillLayout.setVerticalGroup(
             jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnFillLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(41, 41, 41)
                 .addComponent(jlbTitle)
-                .addGap(32, 32, 32)
-                .addComponent(jlbRegExp)
-                .addGroup(jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnFillLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(btnReadInputs))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnFillLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(50, 50, 50)
+                .addGap(35, 35, 35)
                 .addGroup(jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbnAnalizeInputs)
-                    .addComponent(jbnShowReport))
-                .addContainerGap(205, Short.MAX_VALUE))
+                    .addComponent(jbnReadInputs, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbRegExp))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jpnFillLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbnAnalizeInputs, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbnShowReport, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -152,9 +171,9 @@ public class JFPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnReadInputs;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton jbnAnalizeInputs;
+    public javax.swing.JButton jbnReadInputs;
     public javax.swing.JButton jbnShowReport;
     private javax.swing.JLabel jlbRegExp;
     private javax.swing.JLabel jlbTitle;
