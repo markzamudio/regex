@@ -10,10 +10,8 @@ import regex.view.JFPrincipal;
  */
 public class Execute {
     public static void main(String[] args) {
-        ReadData readData = new ReadData();
         JFPrincipal jfPrincipal = new JFPrincipal();
-        CtrlRegExp handler = new CtrlRegExp(readData, jfPrincipal);
+        CtrlRegExp handler = new CtrlRegExp(jfPrincipal);
         handler.run();
-        jfPrincipal.setVisible(true);
     }
 }
