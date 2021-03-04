@@ -111,11 +111,11 @@ public class CtrlRegExp implements ActionListener{
     private String nextRules(String in) {
         String result = "";
         
-        if (in.matches("^[aeiouAEIOU]{2}.*")) {
+        if (in.matches("^[aeiouAEIOU]{2}[^aeiouAEIOU].*")) {
             result += "Cumple con la regla dos [aeiouAEIOU]{2} \n";
             in = in.substring(2);
                 
-            if (in.matches("^[#&]{2}.*")) {
+            if (in.matches("^[#&]{2}[^#&].*")) {
                 result += "Cumple con la regla tres [#&]{2} \n";
                 in = in.substring(2);
                   
