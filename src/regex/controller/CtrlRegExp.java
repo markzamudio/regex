@@ -97,7 +97,7 @@ public class CtrlRegExp implements ActionListener{
             in = in.substring(4);
             result += nextRules(in);
         } else if (in.matches("^(@@)[^@]*")) {
-            result += "Cumple con la regla 1 (@@@@) \n";
+            result += "Cumple con la regla 1 (@@) \n";
             in = in.substring(2);
             result += nextRules(in);
         } else {
